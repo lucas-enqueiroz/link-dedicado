@@ -1,0 +1,116 @@
+$color_cloud: #eaeaea;
+
+.accordion {
+  $accordion: &;
+  background: $light;
+
+  &-tabs {
+    display: none;
+    :focus {
+      outline: none;
+    }
+  }
+
+  &-item {
+    &__label {
+      padding: 1.25rem;
+      cursor: pointer;
+      transition: padding 0.2s ease;
+
+      &:hover {
+        background: $primary__light;
+        color: $light;
+      }
+      &-active {
+        background: $primary__light;
+      }
+    }
+
+    &__container {
+      padding: 0 1.25em;
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: padding 0.2s ease, opacity 0.5s 0.15s ease;
+    }
+  }
+
+  &-active {
+    background: lighten($primary__light, 25%);
+    .accordion-item__label {
+      background: $primary__light;
+      color: $light;
+    }
+
+    .accordion-item__container {
+      padding: 1.25em;
+      height: auto;
+      opacity: 1;
+    }
+  }
+}
+
+@media (min-width: 760px) {
+  .accordion-content .accordion-item__label {
+    display: none;
+  }
+  .accordion-tabs {
+    display: flex;
+    background: $primary__light;
+
+    .accordion-tab {
+      background: $primary__light;
+      color: $light;
+      padding: 1rem 2rem;
+      font: inherit;
+      flex: 1;
+      border: none;
+      cursor: pointer;
+      transition: background 0.1s ease;
+      &:hover {
+        background: rgba($light, 0.01);
+      }
+
+      &.accordion-active {
+        color: $primary__light;
+        background: $light;
+      }
+    }
+  }
+
+  .accordion-item {
+    display: none;
+    border: none;
+    background: $light;
+    min-height: 260px;
+
+    &.accordion-active {
+      display: block;
+
+      .accordion-item__container {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.accordion {
+  box-shadow: 0 1em 2em -0.9em rgba(#000, 0.7);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+
+  + p {
+    color: rgba(#fff, 0.8);
+    font-weight: 300;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+}
+
+.accordion-active .accordion-item__container {
+  padding: 0;
+}
+.accordion-item__container {
+  padding: 0 1.25em;
+}

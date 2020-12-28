@@ -1,0 +1,31 @@
+.container {
+  max-width: $container;
+  margin: 0 auto;
+
+  @include device(medium) {
+    $container: $medium-device;
+    max-width: $container;
+  }
+
+  @include device(small) {
+    $container: $small-device;
+    max-width: $container;
+  }
+}
+
+.subtitle {
+  text-align: center;
+  color: $primary;
+  &::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: $primary;
+    margin: 10px auto 10px auto;
+  }
+}
+
+a {
+  color: $primary;
+}

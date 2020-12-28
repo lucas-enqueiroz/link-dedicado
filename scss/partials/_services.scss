@@ -1,0 +1,59 @@
+// Serviços
+
+.service-list {
+  @include grid(280, 20);
+  text-align: center;
+  .accordion-item__container & {
+    margin: 10px;
+  }
+  @include device(small) {
+    cursor: grab;
+    display: flex;
+    overflow-x: scroll;
+    &:first-child {
+      margin-left: 10px;
+    }
+  }
+  &__link {
+    flex: 1 0 60px;
+    min-width: 200px;
+    background: lighten($light, $amount: 1%);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 1em 2em -0.9em rgba(0, 0, 0, 0.7);
+    &:hover {
+      background: $light;
+      box-shadow: 0 1em 2em -0.9em rgba(0, 0, 0, 0.7);
+    }
+    @include device(small) {
+      margin: 10px 0 10px 0;
+    }
+  }
+  &__icon {
+    width: 60px;
+    margin: 10px auto;
+  }
+  &__title {
+    min-height: 60px;
+    @include type(l);
+    @include device(small) {
+      @include type(m);
+    }
+    display: grid;
+    align-items: center;
+  }
+  p {
+    color: #000;
+    @include device(small) {
+      @include type(s);
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: $primary;
+      margin: 10px auto 10px auto;
+    }
+  }
+}

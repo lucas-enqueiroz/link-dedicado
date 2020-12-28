@@ -1,0 +1,62 @@
+$primary: #000570;
+$primary__light: lighten($primary, 50%);
+$secondary: #c61100;
+$secondary__light: lighten($secondary, 0.9);
+$dark: #000;
+$light: #f9f9f9;
+
+// Variaveis do grid
+$large-device: 1200px;
+$medium-device: 760px;
+$small-device: 480px;
+
+$container: $large-device;
+
+// Box-sizing
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+// Mixin de media-querie
+@mixin device($size) {
+  @if $size == large {
+    @media screen and (min-width: $large-device) {
+      @content;
+    }
+  } @else if $size == medium {
+    @media screen and (min-width: $medium-device) and (max-width: $large-device - 1) {
+      @content;
+    }
+  } @else if $size == small {
+    @media screen and (max-width: $medium-device - 1) {
+      @content;
+    }
+  }
+}
+
+@mixin grid($width, $gap) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($width + px, 1fr));
+  gap: $gap + px;
+}
+
+// Tipografia
+@mixin type($size) {
+  @if $size == s {
+    font-size: 14px;
+    line-height: 20px;
+  } @else if $size == m {
+    font-size: 18px;
+    line-height: 25px;
+  } @else if $size == l {
+    font-size: 24px;
+    line-height: 30px;
+  } @else if $size == xl {
+    font-size: 36px;
+  } @else if $size == xx {
+    font-size: 48px;
+  }
+}

@@ -1,0 +1,18 @@
+.solutions {
+  background: $light;
+  padding: 10px 0 20px 0;
+  p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    @include device(small) {
+      @include type(s);
+    }
+  }
+  h2 {
+    @include type(xl);
+    @include device(small) {
+      @include type(l);
+    }
+  }
+}

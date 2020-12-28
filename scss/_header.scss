@@ -1,0 +1,47 @@
+header {
+  background: $primary;
+}
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_menu ul {
+  display: flex;
+  gap: 10px;
+  li {
+    a {
+      color: $light;
+      display: block;
+      padding: 10px;
+    }
+    &:hover,
+    &.current-menu-item {
+      background-color: darken($primary, 5%);
+    }
+  }
+}
+
+.menu-item-has-children {
+  &:hover .sub-menu {
+    display: block;
+  }
+  .sub-menu {
+    position: absolute;
+    width: 200px;
+    right: 20px;
+    background-color: $primary;
+    display: none;
+    text-align: left;
+    padding: 10px;
+  }
+}
+
+.logo-svg {
+  width: 200px;
+  height: auto;
+  padding: 20px;
+  fill: $light;
+}

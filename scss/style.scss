@@ -1,0 +1,15 @@
+// Variáveis e Mixins
+@import "var-mixin";
+
+// Gerais
+@import "reset";
+@import "geral";
+@import "header";
+@import "footer";
+
+// Paginas
+@import "page/home";
+
+// Partes da Paginas
+@import "partials/tab";
+@import "partials/services";
