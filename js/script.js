@@ -39,3 +39,45 @@ labels.forEach(function(label) {
 tabs.forEach(function(tab) {
 	tab.addEventListener("click", toggleShow);
 });
+
+let scrollpos = window.scrollY;
+const header = document.querySelector("header");
+const main = document.querySelector("main");
+
+if (main !== null) {
+	const main_height = main.offsetHeight - (header.offsetHeight / 2);
+
+	header.classList.add("navbar-fixed") 
+
+	window.addEventListener('scroll', function() { 
+		scrollpos = window.scrollY;
+	
+		if (scrollpos >= main_height) {
+				header.classList.add("navbar-shrink")
+				header.classList.add("navbar-light")
+		}
+		else { 
+				header.classList.remove("navbar-shrink")
+				header.classList.remove("navbar-light")
+		}
+	})
+} else {
+	header.classList.add("navbar-light")
+		
+	const header_height = header.offsetHeight
+
+	window.addEventListener('scroll', function() { 
+		scrollpos = window.scrollY;
+	
+		if (scrollpos >= header_height) {
+				header.classList.add("navbar-shrink")
+				header.classList.add("navbar-fixed") 
+		}
+		else { 
+				header.classList.remove("navbar-shrink")
+				header.classList.remove("navbar-fixed") 
+		}
+	})
+
+}
+

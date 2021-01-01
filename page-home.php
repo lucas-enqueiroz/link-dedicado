@@ -4,9 +4,10 @@ get_header();
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-<main>
-
+<main class="main-slider">
+  <img class="main-slider__img" src="<?php echo get_template_directory_uri(); ?>/img/netflix.jpg" alt="Evento Netflix">
 </main>
+
 <div class="bg_services">
   <?php include(TEMPLATEPATH . "/inc/solucoes.php"); ?>
 

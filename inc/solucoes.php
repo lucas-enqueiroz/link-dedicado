@@ -8,7 +8,7 @@
 
     <a class="service-list__link" href="<?php the_permalink(); ?>">
       <li class="service-list__item">
-        <img class="service-list__icon" src="<?php echo get_template_directory_uri(); ?>/img/favicon.svg"" alt="">
+        <img class="service-list__icon" src="<?php echo get_template_directory_uri(); ?>/img/bkp/favicon.svg"" alt="">
               <h3 class=" service-list__title"><?php the_title(); ?></h3>
         <?php the_content(); ?>
       </li>

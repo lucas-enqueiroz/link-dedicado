@@ -1,5 +1,5 @@
 <?php
-// Template Name: Single Produtos
+// Template Name: Single Serviços
 get_header();
 ?>
 

@@ -1,7 +1,7 @@
 <footer>
   <div class="container footer">
     <a href="<?php bloginfo('url'); ?>">
-      <img src="<?php echo get_template_directory_uri(); ?>/img/madri.svg" class="style-svg logo-svg" alt="Wifi para Eventos">
+      <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" class="style-svg logo-svg" alt="Wifi para Eventos">
     </a>
     <div>
       <h3>Redes Sociais</h3>

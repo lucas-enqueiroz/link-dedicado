@@ -1,47 +1,103 @@
 header {
-  background: $primary;
-}
-.header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
+  width: 100%;
+  transition: 0.5s;
 
-.header_menu ul {
-  display: flex;
-  gap: 10px;
-  li {
-    a {
-      color: $light;
-      display: block;
-      padding: 10px;
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    .menu-header {
+      @include type(l);
+      &__list {
+        display: flex;
+        gap: 10px;
+        li {
+          a {
+            color: $light;
+            display: block;
+            padding: 10px;
+            &:hover {
+              color: darken($primary__light, 5%);
+            }
+          }
+          &.current-menu-item a {
+            color: darken($primary__light, 5%);
+          }
+        }
+        .menu-item-has-children {
+          > a::after {
+            content: "";
+            display: inline-block;
+            margin-left: 5px;
+            vertical-align: middle;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-left: 4px solid;
+            transition: 0.5s;
+          }
+
+          &:hover .sub-menu {
+            display: block;
+          }
+          .sub-menu {
+            position: absolute;
+            transform: translateX(-25%);
+            width: 400px;
+            background-color: $light;
+            display: none;
+            text-align: left;
+            padding: 2px;
+            li + li {
+              border-top: solid $primary__light 2px;
+            }
+            a {
+              color: $dark;
+            }
+            .menu-item a:hover {
+              color: $light;
+              background-color: $primary__light;
+            }
+          }
+        }
+        & > li:hover > a,
+        a:hover {
+          // Inserir elementos nos hover e selecionar os filhos
+          color: $light;
+          background-color: $primary__light;
+          &::after {
+            // border-top: 4px solid;
+            // border-bottom: 0;
+            // border-right: 4px solid transparent;
+            // border-left: 4px solid transparent;
+            transform: rotate(90deg);
+            margin-bottom: -5px;
+          }
+        }
+      }
     }
-    &:hover,
-    &.current-menu-item {
-      background-color: darken($primary, 5%);
+  }
+  &.navbar-fixed {
+    position: fixed;
+    z-index: 10;
+  }
+  &.navbar-light {
+    .header {
+      li a {
+        color: $dark;
+      }
+
+      &-logo__svg {
+        fill: $dark;
+      }
     }
   }
-}
-
-.menu-item-has-children {
-  &:hover .sub-menu {
-    display: block;
+  &.navbar-shrink {
+    background: $light;
+    .header-logo__svg {
+      width: 150px;
+      padding: 5px;
+    }
   }
-  .sub-menu {
-    position: absolute;
-    width: 200px;
-    right: 20px;
-    background-color: $primary;
-    display: none;
-    text-align: left;
-    padding: 10px;
-  }
-}
-
-.logo-svg {
-  width: 200px;
-  height: auto;
-  padding: 20px;
-  fill: $light;
 }

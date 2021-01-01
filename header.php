@@ -36,18 +36,24 @@
 <body>
   <header>
     <div class="container header">
-      <a href="<?php bloginfo('url'); ?>">
-        <img class="style-svg logo-svg" src="<?php echo get_template_directory_uri(); ?>/img/madri.svg" alt="Wifi para Eventos">
+      <a class="header-logo" href="<?php bloginfo('url'); ?>">
+        <img class="style-svg logo-svg header-logo__svg" src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Wifi para Eventos">
       </a>
-      <nav class="header_menu">
+      <nav class="menu-header">
         <?php
+
           $args = array(
             'menu' => 'principal',
             'theme_location' => 'menu-principal',
-            'container' => false
-          );
-          wp_nav_menu( $args );
+            'container' => false,
+            'fallback_cb'   => false,
+            'menu_class' => 'menu-header__list',
+            'li_class'  => 'menu-header__item'
+            );
+        wp_nav_menu($args);
         ?>
+
+
       </nav>
     </div>
   </header>
