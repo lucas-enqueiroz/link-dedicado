@@ -1,4 +1,5 @@
 .main-slider {
+  grid-column: 1 / 4;
   &__img {
     // width: 1903px;
     // height: 937px;
@@ -19,6 +20,7 @@
 }
 
 .solutions {
+  grid-column: 2 / 3;
   background: $light;
   padding: 10px 0 20px 0;
   p {
@@ -29,10 +31,86 @@
       @include type(s);
     }
   }
-  h2 {
-    @include type(xl);
-    @include device(small) {
-      @include type(l);
+}
+
+.rotine {
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  &-title,
+  &-text {
+    text-align: center;
+    grid-column: 1 / 4;
+  }
+  &-item {
+    column-span: 1;
+  }
+  .projeto {
+    background: radial-gradient(
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 1)
+      ),
+      url("../img/projetonovo.jpg") no-repeat center;
+    background-size: cover;
+  }
+  .montagem {
+    background: radial-gradient(
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 1)
+      ),
+      url("../img/montagemnovo.jpg") no-repeat center;
+    background-size: cover;
+  }
+  .resultado {
+    background: radial-gradient(
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 1)
+      ),
+      url("../img/resultadonovo.jpg") no-repeat center;
+    background-size: cover;
+  }
+  &-item {
+    padding: 20px;
+    height: 300px;
+    color: $light;
+    text-align: center;
+    display: grid;
+
+    &_text {
+      display: none;
+      justify-self: center;
+      align-self: center;
+    }
+    &_title {
+      width: 250px;
+      justify-self: center;
+      align-self: end;
+      &::before {
+        @include title-block($light, 5px);
+        height: 2px;
+      }
+      &::after {
+        @include title-block($light, 5px);
+        height: 2px;
+      }
+    }
+
+    &:hover {
+      background: rgb(0, 0, 0);
+      border-right: 10px solid $primary;
+      div {
+        display: block;
+      }
+      h3 {
+        display: none;
+      }
     }
   }
 }

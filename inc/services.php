@@ -1,4 +1,4 @@
-<section class="container accordion">
+<section class="accordion">
   <section class="accordion-tabs">
     <button class="accordion-tab accordion-active" data-actab-group="0" data-actab-id="0">Servicos</button>
     <button class="accordion-tab" data-actab-group="0" data-actab-id="1">Tab 2</button>

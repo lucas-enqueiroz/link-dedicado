@@ -1,8 +1,12 @@
 footer {
   background: $dark;
   color: $light;
+  grid-column: 1 / 4;
+  display: grid;
+  grid-template-columns: 1fr 1200px 1fr;
 }
 .footer {
+  grid-column: 2 / 3;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

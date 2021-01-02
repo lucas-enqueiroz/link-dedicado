@@ -10,7 +10,7 @@ $large-device: 1200px;
 $medium-device: 760px;
 $small-device: 480px;
 
-$container: $large-device;
+// $container: $large-device;
 
 // Box-sizing
 
@@ -59,4 +59,13 @@ $container: $large-device;
   } @else if $size == xx {
     font-size: 48px;
   }
+}
+
+@mixin title-block($color: $primary, $margin: 10px) {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: $color;
+  margin: $margin auto $margin auto;
 }

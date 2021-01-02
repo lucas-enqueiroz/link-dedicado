@@ -1,8 +1,12 @@
 header {
   width: 100%;
   transition: 0.5s;
+  grid-column: 1 / 4;
+  display: grid;
+  grid-template-columns: 1fr 1200px 1fr;
 
   .header {
+    grid-column: 2 / 3;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -81,6 +85,10 @@ header {
   &.navbar-fixed {
     position: fixed;
     z-index: 10;
+    .header {
+      width: 1200px;
+      margin: 0 auto;
+    }
   }
   &.navbar-light {
     .header {

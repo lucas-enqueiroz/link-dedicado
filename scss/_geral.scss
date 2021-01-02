@@ -1,4 +1,7 @@
 body {
+  display: grid;
+  grid-template-columns: 1fr minmax(50%, 1200px) 1fr;
+
   &::-webkit-scrollbar {
     width: 10px;
   }
@@ -13,31 +16,46 @@ body {
   }
 }
 
-.container {
-  max-width: $container;
-  margin: 0 auto;
+// .container {
+//   max-width: $container;
+//   margin: 0 auto;
 
-  @include device(medium) {
-    $container: $medium-device;
-    max-width: $container;
-  }
+//   @include device(medium) {
+//     $container: $medium-device;
+//     max-width: $container;
+//   }
 
-  @include device(small) {
-    $container: $small-device;
-    max-width: $container;
-  }
-}
+//   @include device(small) {
+//     $container: $small-device;
+//     max-width: $container;
+//   }
+// }
 
 .subtitle {
   text-align: center;
   color: $primary;
   &::before {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: $primary;
-    margin: 10px auto 10px auto;
+    // content: "";
+    // display: block;
+    // width: 60px;
+    // height: 3px;
+    // background: $primary;
+    // margin: 10px auto 10px auto;
+    @include title-block();
+  }
+}
+
+h2.subtitle {
+  @include type(xl);
+  @include device(small) {
+    @include type(l);
+  }
+}
+
+h3 {
+  @include type(l);
+  @include device(small) {
+    @include type(m);
   }
 }
 

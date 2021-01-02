@@ -1,6 +1,7 @@
 $color_cloud: #eaeaea;
 
 .accordion {
+  grid-column: 2/3;
   $accordion: &;
   background: $light;
 
