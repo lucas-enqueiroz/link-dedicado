@@ -1,4 +1,5 @@
 <section class="accordion">
+
   <section class="accordion-tabs">
     <button class="accordion-tab accordion-active" data-actab-group="0" data-actab-id="0">Servicos</button>
     <button class="accordion-tab" data-actab-group="0" data-actab-id="1">Tab 2</button>
@@ -17,7 +18,7 @@
 
           <a class="service-list__link" href="<?php the_permalink(); ?>">
             <li class="service-list__item">
-              <img class="service-list__icon" src="<?php echo get_template_directory_uri(); ?>/img/bkp/favicon.svg"" alt="">
+              <img class="service-list__icon" src="<?php echo get_template_directory_uri(); ?>/img/bkp/favicon.svg" alt="">
               <h3 class=" service-list__title"><?php the_title(); ?></h3>
               <?php the_excerpt(); ?>
             </li>

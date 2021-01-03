@@ -13,6 +13,7 @@
     &:first-child {
       margin-left: 10px;
     }
+    @include scrollbar();
   }
   &__link {
     flex: 1 0 60px;

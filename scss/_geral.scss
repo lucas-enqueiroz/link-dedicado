@@ -1,19 +1,9 @@
 body {
   display: grid;
   grid-template-columns: 1fr minmax(50%, 1200px) 1fr;
+  gap: 50px;
 
-  &::-webkit-scrollbar {
-    width: 10px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: $primary;
-    border-radius: 10px;
-    border-left: 2px solid #faf6ed;
-    border-right: 2px solid #faf6ed;
-  }
-  &::-webkit-scrollbar-track {
-    background: #faf6ed;
-  }
+  @include scrollbar();
 }
 
 // .container {
@@ -50,6 +40,7 @@ h2.subtitle {
   @include device(small) {
     @include type(l);
   }
+  text-transform: uppercase;
 }
 
 h3 {

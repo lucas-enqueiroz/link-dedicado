@@ -70,7 +70,7 @@ h6,
 p,
 a,
 ul {
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: normal;
 }
 
@@ -85,17 +85,18 @@ body {
   display: grid;
   -ms-grid-columns: 1fr minmax(50%, 1200px) 1fr;
       grid-template-columns: 1fr minmax(50%, 1200px) 1fr;
+  gap: 50px;
 }
 
 body::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
 }
 
 body::-webkit-scrollbar-thumb {
   background: #000570;
   border-radius: 10px;
-  border-left: 2px solid #faf6ed;
-  border-right: 2px solid #faf6ed;
+  border: 2px solid #faf6ed;
 }
 
 body::-webkit-scrollbar-track {
@@ -117,25 +118,27 @@ body::-webkit-scrollbar-track {
 }
 
 h2.subtitle {
-  font-size: 36px;
+  font-size: 2.25rem;
+  line-height: 3.38rem;
+  text-transform: uppercase;
 }
 
 @media screen and (max-width: 759px) {
   h2.subtitle {
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
   }
 }
 
 h3 {
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
 }
 
 @media screen and (max-width: 759px) {
   h3 {
-    font-size: 18px;
-    line-height: 25px;
+    font-size: 1.125rem;
+    line-height: 1.563rem;
   }
 }
 
@@ -177,8 +180,8 @@ header .header {
 }
 
 header .header .menu-header {
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
 }
 
 header .header .menu-header__list {
@@ -324,43 +327,40 @@ footer {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1 / 4;
+  background: #000;
+}
+
+@media screen and (max-width: 759px) {
+  .main-slider {
+    grid-column: span 1;
+  }
 }
 
 .main-slider__img {
   width: 100%;
   max-height: 100vh;
-  position: relative;
-}
-
-.main-slider::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  opacity: 0.5;
 }
 
 .solutions {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2 / 3;
-  background: #f9f9f9;
   padding: 10px 0 20px 0;
 }
 
 .solutions p {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.563rem;
 }
 
 @media screen and (max-width: 759px) {
   .solutions p {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 
@@ -372,14 +372,18 @@ footer {
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+  row-gap: 10px;
 }
 
 .rotine-title, .rotine-text {
-  text-align: center;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1 / 4;
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.563rem;
 }
 
 .rotine-item {
@@ -403,12 +407,17 @@ footer {
 }
 
 .rotine-item {
-  padding: 20px;
-  height: 300px;
+  padding: 30px;
+  height: 350px;
   color: #f9f9f9;
   text-align: center;
   display: -ms-grid;
   display: grid;
+}
+
+.rotine-item_img {
+  width: 80px;
+  margin: 0 auto 40px auto;
 }
 
 .rotine-item_text {
@@ -418,6 +427,8 @@ footer {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  font-size: 1.125rem;
+  line-height: 1.563rem;
 }
 
 .rotine-item_title {
@@ -539,6 +550,8 @@ footer {
     cursor: pointer;
     -webkit-transition: background 0.1s ease;
     transition: background 0.1s ease;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
   }
   .accordion-tabs .accordion-tab:hover {
     background: rgba(249, 249, 249, 0.01);
@@ -609,6 +622,18 @@ footer {
   .service-list:first-child {
     margin-left: 10px;
   }
+  .service-list::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  .service-list::-webkit-scrollbar-thumb {
+    background: #000570;
+    border-radius: 10px;
+    border: 2px solid #faf6ed;
+  }
+  .service-list::-webkit-scrollbar-track {
+    background: #faf6ed;
+  }
 }
 
 .service-list__link {
@@ -642,8 +667,8 @@ footer {
 
 .service-list__title {
   min-height: 60px;
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
@@ -653,8 +678,8 @@ footer {
 
 @media screen and (max-width: 759px) {
   .service-list__title {
-    font-size: 18px;
-    line-height: 25px;
+    font-size: 1.125rem;
+    line-height: 1.563rem;
   }
 }
 
@@ -664,8 +689,8 @@ footer {
 
 @media screen and (max-width: 759px) {
   .service-list p {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 

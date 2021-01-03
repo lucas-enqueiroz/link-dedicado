@@ -46,18 +46,20 @@ $small-device: 480px;
 // Tipografia
 @mixin type($size) {
   @if $size == s {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   } @else if $size == m {
-    font-size: 18px;
-    line-height: 25px;
+    font-size: 1.125rem;
+    line-height: 1.563rem;
   } @else if $size == l {
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
   } @else if $size == xl {
-    font-size: 36px;
+    font-size: 2.25rem;
+    line-height: 3.38rem;
   } @else if $size == xx {
-    font-size: 48px;
+    font-size: 3rem;
+    line-height: 4.5rem;
   }
 }
 
@@ -68,4 +70,19 @@ $small-device: 480px;
   height: 3px;
   background: $color;
   margin: $margin auto $margin auto;
+}
+
+@mixin scrollbar() {
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 10px;
+    border: 2px solid #faf6ed;
+  }
+  &::-webkit-scrollbar-track {
+    background: #faf6ed;
+  }
 }
