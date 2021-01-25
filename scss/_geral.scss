@@ -1,36 +1,48 @@
 body {
-  display: grid;
-  grid-template-columns: 1fr minmax(50%, 1200px) 1fr;
-  gap: 50px;
+  // @include device(medium) {
+  //   grid-template-columns: 1fr;
+  // }
+  @include device(small) {
+    grid-template-columns: 1fr;
+  }
 
   @include scrollbar();
 }
 
-// .container {
-//   max-width: $container;
-//   margin: 0 auto;
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  $container: $small-device;
+  max-width: 100%;
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
 
-//   @include device(medium) {
-//     $container: $medium-device;
-//     max-width: $container;
-//   }
+  @include device(medium) {
+    $container: $medium-device;
+    max-width: $container;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 
-//   @include device(small) {
-//     $container: $small-device;
-//     max-width: $container;
-//   }
-// }
+  @include device(large) {
+    $container: $large-device;
+    max-width: $container;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  @include device(xlarge) {
+    $container: $xlarge-device;
+    max-width: $container;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
 
 .subtitle {
   text-align: center;
   color: $primary;
   &::before {
-    // content: "";
-    // display: block;
-    // width: 60px;
-    // height: 3px;
-    // background: $primary;
-    // margin: 10px auto 10px auto;
     @include title-block();
   }
 }

@@ -6,11 +6,12 @@ $dark: #000;
 $light: #f9f9f9;
 
 // Variaveis do grid
+$xlarge-device: 1600px;
 $large-device: 1200px;
 $medium-device: 760px;
 $small-device: 480px;
 
-// $container: $large-device;
+$container: $large-device;
 
 // Box-sizing
 
@@ -22,16 +23,20 @@ $small-device: 480px;
 
 // Mixin de media-querie
 @mixin device($size) {
-  @if $size == large {
-    @media screen and (min-width: $large-device) {
+  @if $size == small {
+    @media screen and (max-width: $medium-device - 1) {
       @content;
     }
   } @else if $size == medium {
-    @media screen and (min-width: $medium-device) and (max-width: $large-device - 1) {
+    @media screen and (min-width: $medium-device) {
       @content;
     }
-  } @else if $size == small {
-    @media screen and (max-width: $medium-device - 1) {
+  } @else if $size == large {
+    @media screen and (min-width: $large-device) {
+      @content;
+    }
+  } @else if $size == xlarge {
+    @media screen and (min-width: $xlarge-device) {
       @content;
     }
   }

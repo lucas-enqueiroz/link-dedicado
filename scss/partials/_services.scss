@@ -1,19 +1,27 @@
 // Serviços
 
 .service-list {
-  @include grid(280, 20);
   text-align: center;
-  .accordion-item__container & {
-    margin: 10px;
+  cursor: grab;
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
+  padding: 10px;
+  // &:first-child {
+  //   margin-left: 10px;
+  // }
+  @include scrollbar();
+  // .accordion-item__container & {
+  //   margin: 10px;
+  // }
+
+  @include device(medium) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 20px;
   }
-  @include device(small) {
-    cursor: grab;
-    display: flex;
-    overflow-x: scroll;
-    &:first-child {
-      margin-left: 10px;
-    }
-    @include scrollbar();
+  @include device(large) {
+    grid-template-columns: repeat(4, minmax(280px, 1fr));
   }
   &__link {
     flex: 1 0 60px;
@@ -56,5 +64,11 @@
       background: $primary;
       margin: 10px auto 10px auto;
     }
+  }
+}
+
+li + li {
+  &::after {
+    content: "";
   }
 }

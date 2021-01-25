@@ -1,111 +1,104 @@
-header {
-  width: 100%;
-  transition: 0.5s;
-  grid-column: 1 / 4;
-  display: grid;
-  grid-template-columns: 1fr 1200px 1fr;
-
+@include device(large) {
   .header {
-    grid-column: 2 / 3;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    .menu-header {
-      @include type(l);
-      &__list {
-        display: flex;
-        gap: 10px;
-        li {
-          a {
-            color: $light;
-            display: block;
-            padding: 10px;
-            &:hover {
-              color: darken($primary__light, 5%);
-            }
-          }
-          &.current-menu-item a {
-            color: darken($primary__light, 5%);
-          }
-        }
-        .menu-item-has-children {
-          > a::after {
-            content: "";
-            display: inline-block;
-            margin-left: 5px;
-            vertical-align: middle;
-            border-top: 4px solid transparent;
-            border-bottom: 4px solid transparent;
-            border-right: 4px solid transparent;
-            border-left: 4px solid;
-            transition: 0.5s;
-          }
+    width: 100%;
+    transition: 0.5s;
 
-          &:hover .sub-menu {
-            display: block;
-          }
-          .sub-menu {
-            position: absolute;
-            transform: translateX(-25%);
-            width: 400px;
-            background-color: $light;
-            display: none;
-            text-align: left;
-            padding: 2px;
-            li + li {
-              border-top: solid $primary__light 2px;
-            }
+    &-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      .menu-header {
+        @include type(l);
+        &__list {
+          display: flex;
+          gap: 10px;
+          li {
             a {
-              color: $dark;
-            }
-            .menu-item a:hover {
               color: $light;
-              background-color: $primary__light;
+              display: block;
+              padding: 10px;
+              &:hover {
+                color: $primary__light;
+              }
+            }
+            &.current-menu-item a {
+              color: $primary__light;
+            }
+          }
+          .menu-item-has-children {
+            transition: 3s;
+            > a::after {
+              content: "";
+              display: inline-block;
+              margin-left: 5px;
+              vertical-align: middle;
+              border-top: 4px solid transparent;
+              border-bottom: 4px solid transparent;
+              border-right: 4px solid transparent;
+              border-left: 4px solid;
+              transition: 0.5s;
+            }
+            .sub-menu {
+              position: absolute;
+              transform: translateX(-25%);
+              width: 400px;
+              background-color: $light;
+              display: none;
+              text-align: left;
+              padding: 2px;
+              li + li {
+                border-top: solid $primary__light 2px;
+              }
+              a {
+                color: $dark;
+              }
+              .menu-item a:hover {
+                color: $light;
+              }
+            }
+            &:hover .sub-menu {
+              display: block;
+            }
+          }
+          & > li:hover > a,
+          a:hover {
+            // Inserir elementos nos hover e selecionar os filhos
+            color: $light;
+            background-color: $primary__light;
+            &::after {
+              transform: rotate(90deg);
+              margin-bottom: -5px;
             }
           }
         }
-        & > li:hover > a,
-        a:hover {
-          // Inserir elementos nos hover e selecionar os filhos
-          color: $light;
-          background-color: $primary__light;
-          &::after {
-            // border-top: 4px solid;
-            // border-bottom: 0;
-            // border-right: 4px solid transparent;
-            // border-left: 4px solid transparent;
-            transform: rotate(90deg);
-            margin-bottom: -5px;
-          }
+      }
+    }
+    &.navbar-fixed {
+      position: fixed;
+      z-index: 10;
+    }
+    &.navbar-light {
+      .header-nav {
+        li a {
+          color: $dark;
+        }
+
+        .header-logo__svg {
+          fill: $dark;
         }
       }
     }
-  }
-  &.navbar-fixed {
-    position: fixed;
-    z-index: 10;
-    .header {
-      width: 1200px;
-      margin: 0 auto;
-    }
-  }
-  &.navbar-light {
-    .header {
-      li a {
-        color: $dark;
+    &.navbar-shrink {
+      .header-nav {
+        padding: 0 20px;
       }
-
-      &-logo__svg {
-        fill: $dark;
+      background: $light;
+      .header-logo__svg {
+        width: 170px;
+        padding: 15px;
       }
-    }
-  }
-  &.navbar-shrink {
-    background: $light;
-    .header-logo__svg {
-      width: 150px;
-      padding: 5px;
     }
   }
 }

@@ -1,4 +1,4 @@
-<section class="solutions">
+<section class="solutions container">
   <h2 class="subtitle">Soluções Wirelless para Eventos</h2>
   <p>Com total monitoramento e gerenciamento, é possível criar um ambiente completo de wi-fi onde múltiplos ambientes de rede trabalhem de forma separada, com sistema de hotspot, gestão de usuários e velocidades independentes, você atenderá sob medida a necessidade de cada usuário.</p>
   <ul class="container service-list">

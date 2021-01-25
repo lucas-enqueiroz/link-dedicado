@@ -52,7 +52,7 @@ function custom_post_type_servicos() {
 		'hierarchical' => false,
 		'rewrite' => array('slug' => 'servicos', 'with_front' => true),
 		'query_var' => true,
-		'supports' => array("title", "editor", "thumbnail", "excerpt", "trackbacks", "custom-fields", "revisions", "page-attributes", "post-formats"),
+		'supports' => array("title", "editor", "thumbnail", "excerpt", "trackbacks",  "revisions", "page-attributes", "post-formats"),
     'show_in_rest' => true,
 		'labels' => array (
 			'name' => 'Serviços',

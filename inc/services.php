@@ -1,4 +1,4 @@
-<section class="accordion">
+<section class="accordion container">
 
   <section class="accordion-tabs">
     <button class="accordion-tab accordion-active" data-actab-group="0" data-actab-id="0">Servicos</button>

@@ -12,32 +12,34 @@ get_header();
 
 <?php include(TEMPLATEPATH . "/inc/services.php"); ?>
 
-<section class="rotine">
+<section class="rotine container">
   <h2 class="rotine-title subtitle">Rotina dos nossos projetos</h2>
   <p class="rotine-text">Passe o mouse e conheça nossa rotina nos seus projetos</p>
-  <div class="rotine-item projeto">
-    <h3 class="rotine-item_title">Projeto</h3>
-    <div class="rotine-item_text">
-      <img class="rotine-item_img" src="<?php echo get_template_directory_uri(); ?>/img/projeto-icon.png" alt="">
-      <p>Iniciamos o projeto coletando todas as informações necessárias do seu evento ou empresa para o desenvolvimento da infraestrutura.</p>
-      <p>Oferecemos novas ideias e soluções para implementar o seu projeto.</p>
+  <div class="rotine-items">
+    <div class="rotine-item projeto">
+      <img class="rotine-item_img" src="<?php echo get_template_directory_uri(); ?>/img/icon/projeto.svg" alt="">
+      <h3 class="rotine-item_title">Projeto</h3>
+      <div class="rotine-item_text">
+        <p>Iniciamos o projeto coletando todas as informações necessárias do seu evento ou empresa para o desenvolvimento da infraestrutura.</p>
+        <p>Oferecemos novas ideias e soluções para implementar o seu projeto.</p>
+      </div>
     </div>
-  </div>
-  <div class="rotine-item montagem">
-    <h3 class="rotine-item_title">Infraestrutura</h3>
-    <div class="rotine-item_text">
-      <img class="rotine-item_img" src="<?php echo get_template_directory_uri(); ?>/img/infraestrutura-icon.svg" alt="">
-      <p>Com o projeto desenhado a nossa equipe especializada começa toda montagem da infraestrutura necessária para a realização do evento.</p>
-      <p> Certificando que tudo está em pleno funcionamento, começam a fase de testes.</p>
+    <div class="rotine-item montagem">
+      <img class="rotine-item_img" src="<?php echo get_template_directory_uri(); ?>/img/icon/infraestrutura.svg" alt="">
+      <h3 class="rotine-item_title">Infraestrutura</h3>
+      <div class="rotine-item_text">
+        <p>Com o projeto desenhado a nossa equipe especializada começa toda montagem da infraestrutura necessária para a realização do evento.</p>
+        <p> Certificando que tudo está em pleno funcionamento, começam a fase de testes.</p>
+      </div>
     </div>
-  </div>
-  <div class="rotine-item resultado">
-    <h3 class="rotine-item_title">Monitoramento</h3>
-    <div class="rotine-item_text">
-      <img class="rotine-item_img" src="<?php echo get_template_directory_uri(); ?>/img/monitoramento-icon.svg" alt="">
-      <p>Ao final da montagem toda a nossa equipe fica de plantão, para caso ocorra qualquer tipo de incidente no evento. </p>
-      <p>Preparados para monitorar a rede e realizar manutenção preventiva e emergencial no evento.</p>
-      <p>Assim, você ficando tranquilo com seu evento funcionando perfeitamente.</p>
+    <div class="rotine-item resultado">
+      <img class="rotine-item_img" src="<?php echo get_template_directory_uri(); ?>/img/icon/monitoramento.svg" alt="">
+      <h3 class="rotine-item_title">Monitoramento</h3>
+      <div class="rotine-item_text">
+        <p>Ao final da montagem toda a nossa equipe fica de plantão, para caso ocorra qualquer tipo de incidente no evento. </p>
+        <p>Preparados para monitorar a rede e realizar manutenção preventiva e emergencial no evento.</p>
+        <p>Assim, você ficando tranquilo com seu evento funcionando perfeitamente.</p>
+      </div>
     </div>
   </div>
 </section>
